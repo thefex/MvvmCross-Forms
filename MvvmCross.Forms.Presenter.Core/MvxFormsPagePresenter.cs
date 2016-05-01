@@ -15,8 +15,7 @@ using Xamarin.Forms;
 
 namespace MvvmCross.Forms.Presenter.Core
 {
-    public class MvxFormsPagePresenter
-        : MvxViewPresenter
+    public abstract class MvxFormsPagePresenter : MvxViewPresenter
     {
         private Application _mvxFormsApp;
 
@@ -26,18 +25,18 @@ namespace MvvmCross.Forms.Presenter.Core
             set
             {
                 if (value == null)
-                {
                     throw new ArgumentException("MvxFormsApp cannot be null");
-                }
 
                 _mvxFormsApp = value;
             }
         }
 
-        public MvxFormsPagePresenter()
-        { }
+        protected MvxFormsPagePresenter()
+        {
+            
+        }
 
-        public MvxFormsPagePresenter(Application mvxFormsApp)
+        protected MvxFormsPagePresenter(Application mvxFormsApp)
         {
             MvxFormsApp = mvxFormsApp;
         }
@@ -63,11 +62,22 @@ namespace MvvmCross.Forms.Presenter.Core
 
         public override void Show(MvxViewModelRequest request)
         {
+            if (!IsNativeFormPageActive())
+            {
+                NavigateToNativeFormPage(request);
+                return;
+            }
+
 			if (TryShowPage(request))
                 return;
 
             Mvx.Error("Skipping request for {0}", request.ViewModelType.Name);
         }
+
+        protected abstract bool IsNativeFormPageActive();
+
+        protected abstract void NavigateToNativeFormPage(MvxViewModelRequest withViewModelRequest);
+
 
         protected virtual void CustomPlatformInitialization(NavigationPage mainPage)
         {

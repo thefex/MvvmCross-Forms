@@ -1,19 +1,30 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Core.Views;
 using MvvmCross.Droid.Platform;
+using MvvmCross.Droid.Views;
+using MvvmCross.Forms.Presenter.Core;
+using MvvmCross.Forms.Presenter.Droid;
+using MvvmCross.Platform;
 
 namespace IntegrationSample.Droid
 {
-    class Setup : MvxAndroidSetup
+    public class Setup : MvxAndroidSetup
     {
+        public Setup(Context applicationContext) : base(applicationContext)
+        {
+        }
+
+        protected override IMvxApplication CreateApp()
+            => new IntegrationSampleMvxApp();
+        protected override IMvxAndroidViewPresenter CreateViewPresenter()
+        {
+            var baseAndroidPresenter = base.CreateViewPresenter();
+
+            var presenter = new MvxDroidFormsPresenterProxy(baseAndroidPresenter, new MvxDroidFormsPagePresenter(typeof(MainActivity)));
+            Mvx.RegisterSingleton<IMvxViewPresenter>(presenter);
+
+            return presenter;
+        }
     }
 }

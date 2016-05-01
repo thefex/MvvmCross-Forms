@@ -31,7 +31,6 @@ namespace MvvmCross.Forms.Presenter.Core
             }
         }
 
-
         public override void ChangePresentation(MvxPresentationHint hint)
         {
             // TODO: At this moment only Classic ViewModels support change presentation

@@ -1,18 +1,26 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+using IntegrationSample.ViewModels;
+using MvvmCross.Droid.Views;
 
 namespace IntegrationSample.Droid
 {
-    class FeedbackActivity
+    [Activity(Label = "Feedback", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    public class FeedbackActivity : MvxActivity<FeedbackViewModel>
     {
+        public FeedbackActivity()
+        {
+                
+        }
+
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+
+            SetContentView(Resource.Layout.FeedbackLayout);
+        }
     }
 }

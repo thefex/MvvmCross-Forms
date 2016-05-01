@@ -75,6 +75,9 @@
       <HintPath>..\..\packages\MvvmCross.Core.4.1.4\lib\MonoAndroid\MvvmCross.Droid.Shared.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MvvmCross.Forms.Presenter.Core">
+      <HintPath>..\..\..\bin\Debug\Droid\MvvmCross.Forms.Presenter.Core.dll</HintPath>
+    </Reference>
     <Reference Include="MvvmCross.Forms.Presenter.Droid">
       <HintPath>..\..\..\bin\Debug\Droid\MvvmCross.Forms.Presenter.Droid.dll</HintPath>
     </Reference>
@@ -145,10 +148,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FeedbackActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
+    <Compile Include="SplashScreenActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -165,8 +170,8 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Tabbar.axml" />
-    <AndroidResource Include="Resources\layout\Toolbar.axml" />
+    <AndroidResource Include="Resources\layout\Tabbar.xml" />
+    <AndroidResource Include="Resources\layout\Toolbar.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -174,6 +179,12 @@
       <Project>{6F444DEA-4F0C-4C54-9528-FAA900CCE8F8}</Project>
       <Name>IntegrationSample</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\SplashScreen.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\FeedbackLayout.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

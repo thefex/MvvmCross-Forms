@@ -1,18 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+using Android.Content.PM;
+using MvvmCross.Forms.Presenter.Droid;
 
 namespace IntegrationSample.Droid
 {
-    class SplashScreenActivity
+    [Activity(
+       Label = "Example.Droid"
+       , MainLauncher = true
+       , Icon = "@drawable/icon"
+       , NoHistory = true
+       , ScreenOrientation = ScreenOrientation.Portrait)]
+    public class SplashScreenActivity : MvxFormsSplashScreenActivity
     {
+        public SplashScreenActivity() : base(Resource.Layout.SplashScreen)
+        {
+        }
     }
 }
