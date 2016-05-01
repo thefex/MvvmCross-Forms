@@ -134,7 +134,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MvxFormsDroidPagePresenter.cs" />
+    <Compile Include="MvxFormsAppCompatActivity.cs" />
+    <Compile Include="MvxDroidFormsPresenterProxy.cs" />
+    <Compile Include="MvxFormsSplashScreenActivity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
