@@ -82,6 +82,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="MvxFormsWindowsPhonePagePresenter.cs" />
+    <Compile Include="MvxWindowsFormsPresenterProxy.cs" />
     <Compile Include="MvxWindowsPhoneFormsPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

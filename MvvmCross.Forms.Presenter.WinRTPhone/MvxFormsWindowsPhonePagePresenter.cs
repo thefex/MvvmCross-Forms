@@ -14,7 +14,8 @@ namespace MvvmCross.Forms.Presenter.WinRTPhone
         private readonly Type _mvxFormsPageType;
         private readonly IMvxWindowsFrame _rootFrame;
 
-        public MvxFormsWindowsPhonePagePresenter(Type mvxFormsPageType, IMvxWindowsFrame rootFrame, Application mvxFormsApp)
+        public MvxFormsWindowsPhonePagePresenter(Type mvxFormsPageType, IMvxWindowsFrame rootFrame,
+            Application mvxFormsApp)
             : base(mvxFormsApp)
         {
             _mvxFormsPageType = mvxFormsPageType;
@@ -24,7 +25,7 @@ namespace MvvmCross.Forms.Presenter.WinRTPhone
         protected override bool IsNativeFormPageActive()
             => _rootFrame.Content is MvxWindowsPhoneFormsPage;
 
-        protected override void NavigateToNativeFormPage(MvxViewModelRequest withViewModelRequest) 
+        protected override void NavigateToNativeFormPage(MvxViewModelRequest withViewModelRequest)
             => _rootFrame.Navigate(_mvxFormsPageType, JsonConvert.SerializeObject(withViewModelRequest));
     }
 }
