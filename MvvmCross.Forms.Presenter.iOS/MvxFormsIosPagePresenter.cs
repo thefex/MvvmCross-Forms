@@ -6,6 +6,7 @@
 // Project Lead - Tomasz Cielecki, @cheesebaron, mvxplugins@ostebaronen.dk
 // Contributor - Marcos Cobeña Morián, @CobenaMarcos, marcoscm@me.com
 
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Forms.Presenter.Core;
 using MvvmCross.iOS.Views.Presenters;
 using UIKit;
@@ -34,9 +35,16 @@ namespace MvvmCross.Forms.Presenter.iOS
         {
         }
 
-        protected override void CustomPlatformInitialization(NavigationPage mainPage)
+        protected override bool IsNativeFormPageActive()
         {
-            _window.RootViewController = mainPage.CreateViewController();
+            throw new System.NotImplementedException();
         }
+
+        protected override void NavigateToNativeFormPage(MvxViewModelRequest withViewModelRequest)
+        {
+            throw new System.NotImplementedException();
+        }
+
+
     }
 }

@@ -15,7 +15,7 @@
     </ContentPage.Padding>
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Name="Menu1" Text = "About" ClassId = "About" Order = "Primary" Command="{Binding ShowAboutPageCommand}">
+        <ToolbarItem Text = "About" ClassId = "About" Order = "Primary" Command="{Binding ShowAboutPageCommand}">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource"
                     WinPhone="Toolkit.Content/ApplicationBar.Add.png" 

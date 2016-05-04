@@ -78,11 +78,6 @@ namespace MvvmCross.Forms.Presenter.Core
 
         protected abstract void NavigateToNativeFormPage(MvxViewModelRequest withViewModelRequest);
 
-
-        protected virtual void CustomPlatformInitialization(NavigationPage mainPage)
-        {
-        }
-
         private bool TryShowPage(MvxViewModelRequest request)
         {
             var page = MvxPresenterHelpers.CreatePage(request);
@@ -98,7 +93,6 @@ namespace MvvmCross.Forms.Presenter.Core
             {
                 _mvxFormsApp.MainPage = new NavigationPage(page);
                 mainPage = MvxFormsApp.MainPage as NavigationPage;
-                CustomPlatformInitialization(mainPage);
             }
             else
             {
