@@ -36,13 +36,11 @@ namespace MvvmCross.Forms.Presenter.iOS
         }
 
         protected override bool IsNativeFormPageActive()
-        {
-            throw new System.NotImplementedException();
-        }
+            => true; 
 
         protected override void NavigateToNativeFormPage(MvxViewModelRequest withViewModelRequest)
         {
-            throw new System.NotImplementedException();
+            
         }
 
 
