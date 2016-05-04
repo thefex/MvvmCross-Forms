@@ -1,6 +1,7 @@
 using System;
 using Android.Content;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Droid.Views;
 using MvvmCross.Forms.Presenter.Core;
 using MvvmCross.Platform;
 using MvvmCross.Platform.Droid.Platform;
@@ -8,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace MvvmCross.Forms.Presenter.Droid
 {
-    public class MvxDroidFormsPagePresenter : MvxFormsPagePresenter
+    public class MvxDroidFormsPagePresenter : MvxFormsPagePresenter, IMvxAndroidViewPresenter
     {
         private readonly Type _formsAppCompatActivityType;
         public static readonly string FirstNavigationRequestPackageExtraKey = "FirstNavigationRequestPackageKey";
